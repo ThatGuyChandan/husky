@@ -8,14 +8,14 @@ A simple leave management web app where **employees** can apply for leave and **
 - **Backend**: Node.js, Express, JWT, Mongoose  
 - **Database**: MongoDB Atlas  
 
-### High‑level flow (Mermaid)
+### High-level flow (Mermaid)
 
 ```mermaid
 flowchart LR
-  U[User (Employee / Employer)] --> UI[Vue 3 Frontend]
-  UI -->|HTTP JSON (VITE_API_URL/api)| API[Express REST API]
-  API -->|Read / Write| DB[(MongoDB Atlas)]
-  API -->|JWT Auth + RBAC| UI
+  U[User - Employee or Employer] --> UI[Vue 3 Frontend]
+  UI -->|HTTP JSON via VITE_API_URL/api| API[Express REST API]
+  API -->|Read and Write| DB[(MongoDB Atlas)]
+  API -->|JWT Auth and RBAC| UI
 ```
 
 ### Main features
@@ -82,4 +82,5 @@ The app will be available at `http://localhost:5173` and will call the backend u
 - Deploy the **backend** (Express API) to any Node-compatible platform (e.g. Render, Railway, Fly.io) and set `MONGODB_URI`, `JWT_SECRET`, and optionally `PORT` in their env settings.
 - Deploy the **frontend** (Vite build output) to a static host (e.g. Vercel, Netlify, Render static site) and set `VITE_API_URL` there to your backend URL (e.g. `https://your-backend.example.com`).  
 - No code changes are needed; changing `VITE_API_URL` is enough for the frontend to talk to the deployed backend.
+
 
